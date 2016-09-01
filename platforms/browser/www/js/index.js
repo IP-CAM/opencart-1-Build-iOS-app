@@ -112,7 +112,7 @@ $(document).ready(function(){
 					if(obj['success'] != 'false'){
 						ProductList = obj['products']
 						for (var i = 0; i< obj['products'].length; ++i){
-							$("#menuproducts").append('<li><a id="'+ ProductList[i].id + '" onclick="MainPage[\'applyproduct\'](this.id)" data-role="listview">' + ProductList[i].name + '</a></li>')
+							$("#menuproducts").append('<li><a id="'+ ProductList[i].id + '" onclick="MainPage[\'applyproduct\'](this.id)" data-role="listview">' + ProductList[i].name + ' | ' + ProductList[i].pirce +'</a></li>')
 						}
 						$("#menuproducts").listview("refresh");
 						$("#header").append('<a click="MainPage.backbutton();" id="back" data-rel="back" class="ui-btn-left ui-btn ui-icon-back ui-btn-icon-notext ui-shadow ui-corner-all" data-role="button">Back</a>');
