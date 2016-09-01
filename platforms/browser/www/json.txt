@@ -1,0 +1,196 @@
+var urlhost = "http://127.0.0.1:80/index.php?route=feed/rest_api/category&key=123",
+
+{
+	"data":
+		[
+			{
+			"id":"20",
+			"name":"Desktops",
+			"sort_order":"1",
+			"meta_title":"",
+			"language_id":"1"
+			},
+			{
+			"id":"18",
+			"name":"Laptops & Notebooks",
+			"sort_order":"2",
+			"meta_title":"",
+			"language_id":"1"
+			},
+			{
+			"id":"25",
+			"name":"Components",
+			"sort_order":"3",
+			"meta_title":"",
+			"language_id":"1"
+			},
+			{
+			"id":"57",
+			"name":"Tablets",
+			"sort_order":"3",
+			"meta_title":"",
+			"language_id":"1"
+			}
+		]
+}
+
+
+
+<!--	
+<div data-role="page" id="page" data-url="page" data-theme="a">
+	
+	<div data-role="header">
+		<h1>Acessorias</h1>
+	</div>
+		
+		
+	<div data-role="main" class="ui-content">
+		<ul data-role="listview" id="menulist">
+            <li><a href="#" id="catalog">Catalog</a></li>
+            <li><a href="#" id="cart">Cart</a></li>
+            <li><a href="#" id="orders">Orders</a></li>
+            <li><a href="#" id="payment">Payment</a></li>
+            <li><a href="#" id="delivery">Delivery</a></li>
+		</ul>
+	</div>
+	
+	
+	<div data-role="footer" data-theme="c">
+		<div data-role="navbar">
+			<ul>
+			<li><a id="profile" class="profile" href="#profile" data-icon="gear">profile</a></li>
+			</ul>
+		</div>
+	
+	</div>
+
+</div	>
+-->
+
+
+
+
+
+
+
+<div data-role="page" id="page" data-url="page" data-theme="a">
+	<div data-role="header">
+		<h1>Acessorias</h1>
+	</div>
+	<div data-role="content" id="content">
+		<div data-role="controlgroup" id="controlgroup">
+			<a id="catalog" class="catalog" onclick="RendCategories();" data-role="button" data-icon="arrow-r" data-iconpos="right" data-theme="d">Catalog</a>
+			<a id="cart" class="cart" href="#cart" data-role="button" data-icon="arrow-r" data-iconpos="right" data-theme="d">Cart</a>
+			<a id="orders" class="orders" href="#orders" data-role="button" data-icon="arrow-r" data-iconpos="right">Orders</a>
+			<a id="payment" class="payment" href="#payment" data-role="button" data-icon="arrow-r" data-iconpos="right">Payment</a>
+			<a id="delivery" class="delivery" href="#delivery" data-role="button" data-icon="arrow-r" data-iconpos="right">Delivery</a>
+		</div>
+	
+	</div>
+	<div data-role="footer" data-theme="c">
+		<div data-role="navbar">
+			<ul>
+			<li><a id="profile" class="profile" href="#profile" data-icon="gear">profile</a></li>
+			</ul>
+		</div>
+	
+	</div>
+</div>
+
+<div id="profile" data-url="profile" data-role="page" data-theme="a">
+	<div data-role="header">
+		<h1>Profile</h1>
+		<a href="#start" data-rel="back" data-role="button" data-inline="true">&laquo; Back</a>
+	</div>
+	<div data-role="content">
+		<form id="form_tw31" method="POST">
+			<div data-role="fieldcontain">
+				<input type="text" name="name" id="inp_tw32"  data-mini="true" value="First name"/>
+			</div>
+			<div data-role="fieldcontain">
+				<input type="text" name="inp_tw33" id="inp_tw33"  data-mini="true" value="Last name"/>
+			</div>
+			<div data-role="fieldcontain">
+				<input type="text" name="city" id="inp_tw41"  data-mini="true" value="City"/>
+			</div>
+			<div data-role="fieldcontain">
+				<input type="text" name="birthday" id="inp_tw36"  data-mini="true" value="Birthday"/>
+			</div>
+			<div data-role="fieldcontain">
+				<input type="text" name="myphonemodel" id="inp_tw38"  data-mini="true" value="My phone model"/>
+			</div>
+		</form>
+	</div>
+</div>
+
+<div id="login" data-url="login" data-role="page" data-theme="a">
+	<div data-role="header" data-theme="d">
+		<h1>Login</h1>
+	</div>
+	<div data-role="content">
+		<form id="email" class="email" action="#main" method="POST">
+			<div data-role="fieldcontain">
+				<label for="inp_tw10">e-mail</label>
+				<input type="text" name="email" id="inp_tw10" value="e-mail"/>
+			</div>
+			<div data-role="fieldcontain">
+				<label for="inp_tw11">password</label>
+				<input type="password" name="password" id="inp_tw11" value="password"/>
+			</div>
+			<input id="submit" class="submit" type="submit" value="Sign-In"/>
+		</form>
+	</div>
+
+
+
+
+
+
+
+	<script>GetCategories();</script>
+	
+	
+	
+	
+	
+	
+	<li><a id="profile" class="profile" href="#profile" data-icon="home">home</a></li>
+			<li><a id="profile" class="profile" href="#profile" data-icon="shop">cart</a></li>
+			<li><a id="profile" class="profile" href="#profile" data-icon="bars">my orders</a></li>
+			<li><a id="profile" class="profile" href="#profile" data-icon="info">about</a></li>
+			<li><a id="profile" class="profile" href="#profile" data-icon="user">profile</a></li>
+			
+			
+			
+				/*$.ajax ({
+		type: 'get',
+		datatype: 'json',
+		crossOrigin: true,
+		url: jsonurl,
+		cache: false,
+		success: function (data) {
+			data= data.categories
+			$.each(data, function (j, categories){
+				items.push('<li><a id="' + data[j].id + '" href="#">' + data[j].name + '</a></li>')
+				//$('listview').appendTo()
+			})
+			items = items.join("")
+			var Listview = document.getElementById('listview')
+			console.log(items)
+			Listview.innerHTML = items
+
+		},
+	}) */
+	
+	
+			<div data-role="navbar">
+				<ul>
+				<li><a id="profile" class="profile" onclick="GetCategories();" data-icon="home">home</a></li>
+				<li><a id="profile" class="profile" href="#profile" data-icon="shop">cart</a></li>
+				<li><a id="profile" class="profile" href="#profile" data-icon="info">my orders</a></li>
+				<li><a id="profile" class="profile" href="#profile" data-icon="info">about</a></li>
+				<li><a id="profile" class="profile" href="#profile" data-icon="gear">profile</a></li>
+				</ul>
+			</div>
+
+	
