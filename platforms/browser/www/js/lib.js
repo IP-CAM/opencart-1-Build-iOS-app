@@ -1,30 +1,38 @@
-var urlhost = "127.0.0.1", 
-	urlkey = "123", 
+// Настройки для связи с OpenCart RestAPI
+apiKey = "123";
+apiPath = "127.0.0.1";
+//apiPath = "10.11.86.128";
 
-function RestAPI () {
-	// Работа с Rest API для opencart
-	
-	
-	
-	
-	
-	
-	
-	jQuery.support.cors = true;
-	var url = urlhost + '/' + urlapi + urlcategories + '&key=' + urlkey
-	items = new Array()
-	$.getJSON(url, function (data){
-		//document.getElementById('listview').style.display = "none"
-		data= data.categories
-		$.each(data, function (j, categories){
-			items.push('<li><a id="' + data[j].id + '" href="#">' + data[j].name + '</a></li>')
+// Взаимодействие с OpenCart RestAPI
+var RestAPI = {
+	getcategories: function (dataobj) {
+		$.ajax({
+			url: 'http://' + apiPath + ':80/index.php?route=feed/rest_api/category&key=' + apiKey,
+			datatype: 'json',
+			method: 'GET',
+			success: function (data) {
+				var resp = JSON['parse'](data);
+				if (resp['success'] != false){dataobj(resp);}
+			}
 		})
-		items = items.join("")
-		var Listview = document.getElementById('listview')
-		console.log(items)
-		Listview.innerHTML = items
-	})
+	},
+	getproducts: function (catid,objdata) {
+		//var catid = 20;
+		//console.log(catid);
+		$.ajax({
+			url: 'http://' + apiPath + ':80/index.php?route=feed/rest_api/products&key=' + apiKey,
+			datatype: "json",
+			method: "GET",
+			data: {'category' : catid},
+			success: function (data) {
+				var resp = JSON['parse'](data);
+				if (resp['success'] != false){
+					objdata(resp);
+				}
+				
+			}
+		})
+		
+	},
+	
 }
-
-
-///
