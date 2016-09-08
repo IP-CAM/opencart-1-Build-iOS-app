@@ -371,11 +371,6 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0730;
-				TargetAttributes = {
-					1D6058900D05DD3D006BFB54 = {
-						DevelopmentTeam = Z7GPDZ28HY;
-					};
-				};
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "OpenCartMobile" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -509,7 +504,7 @@
 				GCC_VERSION = "";
 				INFOPLIST_FILE = "OpenCartMobile/OpenCartMobile-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.phonegap.helloworld;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lvovych.opencartmobile;
 				PRODUCT_NAME = OpenCartMobile;
 				PROVISIONING_PROFILE = "";
 			};
@@ -532,7 +527,7 @@
 				GCC_THUMB_SUPPORT = NO;
 				GCC_VERSION = "";
 				INFOPLIST_FILE = "OpenCartMobile/OpenCartMobile-Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = com.phonegap.helloworld;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lvovych.opencartmobile;
 				PRODUCT_NAME = OpenCartMobile;
 				PROVISIONING_PROFILE = "";
 			};

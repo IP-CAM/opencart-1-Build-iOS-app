@@ -3,3 +3,4 @@
 # ignore .cordova
 /.cordova/*
 json.txt
+cordobabuild.sh

@@ -1,1 +1,1 @@
-# oc_mobile
+# com.phonegap.helloworld

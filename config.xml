@@ -1,4 +1,4 @@
-<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.phonegap.helloworld" version="1.0.0">
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.lvovych.opencartmobile" version="1.0.0">
   <name>OpenCartMobile</name>
   <description>Open Cart mobile application</description>
   <author href="http://lvovych.com" email="ya@lvovych.com">Lvovych Yaroslav</author>
